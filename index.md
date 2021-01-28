@@ -7,12 +7,12 @@ I can also build it, wire it, start it up and debug it too. I'm the whole packag
 
 To show you what I can do, look through my site, check out some code, let me know what you think!
 
-##Code Review
+## Code Review
 Let's kick things off with a code review. This is of a module I authored and had several iterations over the years (spoiler alert, I enhanced it below):
 
 [Code Review](https://youtu.be/kohujhDI36o)
 
-##Enhanced Chiller Module
+## Enhanced Chiller Module
 Can't have a code review complete with enhancement suggestions without actually showing them off, can you? Well, here is a link to show them off!
 
 
