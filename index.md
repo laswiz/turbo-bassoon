@@ -1,3 +1,5 @@
+###   
+
 ### ABOUT ME
 If you asked me 20 years ago if I would be finishing my bachelor's degree in Computer Science and authoring my own webpage, I would have thought you were nuts! 
 Of course, I also lived in a different state, was single, and worked 80 hours per week too! Times have certainly changed. Virtually all my knowledge before I went 
