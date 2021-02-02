@@ -1,3 +1,6 @@
-layout: page
-title: "Fixing a Undersized Chiller with Software"
-permalink: /ChillerControl/
+### [HOME](https://laswiz.github.io/turbo-bassoon/index.html)
+
+### A Little Background...
+My dad worked on a myriad of cooling equipment over his 40+ years of work. From small enviromental growth chambers to ice systems with 2,000,000 gallon tanks, he has seen it all. Being the curious kid, I was usually with him for all the times he was not in the office on a 'normal' day. He never programmed software. He was strictly mechanical and cooling related, and carried several licenses for handling different refrigerants at various times. He has more knowledge than I ever will have in this field, but as much as I could absorb and remember, I did.
+
+Enter my first lead developer project; a brand new machine. We were tasked with taking known functionality and reducing costs and overhead. With a team of four PLC developers, we completely rewrote 15+ years of code for a new machine. Four more developers completely remade the HMI (Human Machine Interface). We did it in one year. One of those facets was a chiller control for cooling purposes. Until this point, there were exactly two signals going to the chiller: On/Off and Error/No Error. Pretty simplistic for the 21st century. To save even more cost, we integrated this chiller control into our PLC. This gave the added benefit of having more data at our control.
