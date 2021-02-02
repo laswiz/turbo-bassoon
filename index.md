@@ -10,7 +10,7 @@ To show you what I can do, look through my site, check out some code, let me kno
 ## Code Review
 Let's kick things off with a code review. This is of a module I authored and had several iterations over the years (spoiler alert, I enhanced it below):
 
-[Code Review](https://youtu.be/kohujhDI36o)
+[Code Review](https://youtu.be/kohujhDI36o){:target="_blank"}
 
 ## Enhanced Chiller Module
 Can't have a code review complete with enhancement suggestions without actually showing them off, can you? Well, here is a link to show them off!
