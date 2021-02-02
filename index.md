@@ -14,7 +14,7 @@ Let's kick things off with a code review. This is of a module I authored and had
 
 ## Enhanced Chiller Module
 Can't have a code review complete with enhancement suggestions without actually showing them off, can you? Well, here is a link to show them off!
-Update
+[Fixing an Undersized Chiller with Software](https://laswiz.github.io/turbo-bassoon/ChillerControl.html)
 
 
 
