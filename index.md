@@ -1,4 +1,4 @@
-### ABOUT ME
+### SELF-ASSESSMENT
 If you asked me 20 years ago if I would be finishing my bachelor's degree in Computer Science and authoring my own webpage, I would have thought you were nuts! 
 Of course, I also lived in a different state, was single, and worked 80 hours per week too! Times have certainly changed. Virtually all my knowledge before I went 
 back to school was from that other school, the one of hard knocks. I learned, screwed up, persevered, and did what I could to make a difference. At this point in 
@@ -7,20 +7,22 @@ I can also build it, wire it, start it up and debug it too. I'm the whole packag
 
 To show you what I can do, look through my site, check out some code, let me know what you think!
 
-## Code Review
+## ABOUT ME
+It seems a little strange to have a self-assessment on a page that is all about me, but how else can I explain what I feel my strengths and weaknesses are?
+There is not a programmer on the planet who is an expert in everything they do. That's OK! I am by no means an expert, but I am pretty darn good at my craft,
+if I do say so myself. [About Me](https://laswiz.github.io/turbo-bassoon/AboutMe.html)
+
+## CODE REVIEW
 Let's kick things off with a code review. This is of a module I authored and had several iterations over the years (spoiler alert, I enhanced it below):
 
 <iframe width="1000" height="562" src="https://www.youtube.com/embed/kohujhDI36o?rel=o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-## Enhanced Chiller Module
+## ENHANCED CHILLER MODULE
 Can't have a code review complete with enhancement suggestions without actually showing them off, can you? Well, here is a link to show them off!
 [Fixing an Undersized Chiller with Software](https://laswiz.github.io/turbo-bassoon/ChillerControl.html)
 
-## Self-Assessment
-It seems a little strange to have a self-assessment on a page that is all about me, but how else can I explain what I feel my strengths and weaknesses are?
-There is not a programmer on the planet who is an expert in everything they do. That's OK! I am by no means an expert, but I am pretty darn good at my craft,
-if I do say so myself. [Self-Assessment](https://laswiz.github.io/turbo-bassoon/SelfAssessment.html)
+
 
 
 
