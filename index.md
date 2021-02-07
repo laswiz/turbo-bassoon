@@ -17,6 +17,12 @@ Let's kick things off with a code review. This is of a module I authored and had
 Can't have a code review complete with enhancement suggestions without actually showing them off, can you? Well, here is a link to show them off!
 [Fixing an Undersized Chiller with Software](https://laswiz.github.io/turbo-bassoon/ChillerControl.html)
 
+## Self-Assessment
+It seems a little strange to have a self-assessment on a page that is all about me, but how else can I explain what I feel my strengths and weaknesses are?
+There is not a programmer on the planet who is an expert in everything they do. That's OK! I am by no means an expert, but I am pretty darn good at my craft,
+if I do say so myself. [Self-Assessment](https://laswiz.github.io/turbo-bassoon/SelfAssessment.html)
+
+
 
 
 
