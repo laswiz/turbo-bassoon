@@ -1,6 +1,6 @@
 ### [HOME](https://laswiz.github.io/turbo-bassoon/index.html)
 
-### How do I Assess The?
+### How do I Assess Thee?
 Where do I start? I touched on it on the home page a bit. I never expected to end up here. I've always been a friend of technology. From a young age, I just "got" computers. 
 I built my first one when I was a teenager. I loved playing video games, but was always fascinated about how they worked more than playing them (but I did do both!). 
 When I started working, I ended up being the whiz kid who could diagnose the new computer enabled cars. The old timers hated me (well, they hated the technology... I was
