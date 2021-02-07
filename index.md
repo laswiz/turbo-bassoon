@@ -1,3 +1,8 @@
+### WELCOME! I'M GLAD YOU ARE HERE!
+I'm excited to showcase to you what I can do, what I have done, and I'm certainly excited to get your unbiased opinion! To show you what I can do, take a look around 
+the site, check out some of my accomplishments, and let me know what you think!
+
+
 ### SELF-ASSESSMENT
 If you asked me 20 years ago if I would be finishing my bachelor's degree in Computer Science and authoring my own webpage, I would have thought you were nuts! 
 Of course, I also lived in a different state, was single, and worked 80 hours per week too! Times have certainly changed. Virtually all my knowledge before I went 
@@ -5,7 +10,6 @@ back to school was from that other school, the one of hard knocks. I learned, sc
 my life, I'm a Controls Engineer, and I'm fine with that. I'd love to run a team again, maybe someday an entire department. If it controls something, I can code it. 
 I can also build it, wire it, start it up and debug it too. I'm the whole package (yes, I am tooting my own horn).
 
-To show you what I can do, look through my site, check out some code, let me know what you think!
 
 ## ABOUT ME
 It seems a little strange to have a self-assessment on a page that is all about me, but how else can I explain what I feel my strengths and weaknesses are?
