@@ -147,6 +147,8 @@ $btnUpFolder.Location = New-Object System.Drawing.Point(($cmbDrives.Left + $cmbD
 ```
 
 Next up is the form controls. We have to handle some events here when the user performs some functions. I put them together so they are easy to follow:
+
+```
 $btnOK.Add_Click( {
     #see if we have a file or a folder
     if ($lstFiles.SelectedItems -like '*.xml*') { 
@@ -220,8 +222,11 @@ $txtFilter.Add_TextChanged( {
     
 } )
 
+```
+
 Now we get to the heart of the matter. Here we are running a function to fill the listbox of the available files in the selected folder (which is a parameter):
 
+```
 function fillListBox ($pathtoSearch) {
 
     $lstFiles.items.Clear()
@@ -258,8 +263,11 @@ function fillListBox ($pathtoSearch) {
         [System.Windows.Forms.MessageBox]::Show("Error! Drive Not Accessible! Choose a different drive", "Error Accessing Drive",[System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Exclamation)
     }
 }
+```
 
 Next is a function to fill the combo boxes with available drives. Note, this includes some filtering functions to hide certain drives and devices:
+
+```
 #combobox clear and populate function
 function fillComboBox() {
     $cmbDrives.Items.Clear()
@@ -289,8 +297,11 @@ function fillComboBox() {
     #however, update the global string we use
     $global:currentPath = $global:drivePathArr[$cmbDrives.SelectedIndex]
 }
+```
 
 This function actually loads the file to the transfer folder for the PLC:
+
+```
 function loadFile() {
     #called from the double click event of the listview or the ok button
     
@@ -350,8 +361,11 @@ function loadFile() {
     }
 
 }
+```
 
 The last separate function updates the current path so we default to the last used path when opening a file:
+
+```
 function setCurrentPath() {
 
     #note: When to change the combo box index, it will self refresh to the root of this drive. 
@@ -383,8 +397,11 @@ function setCurrentPath() {
     fillListBox($global:currentPath)
 
 }
+```
 
 The main function doesn't do much... It essentially just sets up the form and lets the user control the rest:
+
+```
 #MAIN ROUTINE
 $OpenFile.Controls.AddRange(@($lblTop, $btnCancel, $btnOK, $cmbDrives, $lstFiles, $btnUpFolder, $txtFilter, $lblFilter))
 
@@ -397,5 +414,5 @@ setCurrentPath
 #show the dialog
 $OpenFile.ShowDialog()
 
-
+```
 
