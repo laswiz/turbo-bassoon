@@ -13,23 +13,28 @@ showcases me directly, my approach to problems, my methodology and thinking as t
 code, because it belongs in one gigantic, monolithic module that is nearly 10,000 lines long, and has much more in it than just file handling. Add to that the pages of code 
 for the HMI, the text and error messages, and it would take me hours to explain everything when a few pictures would do. So without further ado, here is how the file 
 handling worked before I started with this company:
+
 ![Picture 1](https://laswiz.github.io/turbo-bassoon/assets/Picture1.png)
 
 
 File selection. Note there is only one accessible directory called “C”, but this is actually on another drive!
 Import and Export shared similar screens (but were different):
+
 ![Picture 2](https://laswiz.github.io/turbo-bassoon/assets/Picture2.png)
 
 Saving a file was another process entirely:
+
 ![Picture 3](https://laswiz.github.io/turbo-bassoon/assets/Picture3.png)
 
 I think you get the idea. Importing and exporting were limited to one drive letter, and if the USB stick was not on that letter, it just failed. Worst of all, the only 
 way to fix it was to reboot the control! On to happier things. What I did to fix it, as I already mentioned, was to incorporate Powershell. Here is the file open function:
+
 ![Picture 4](https://laswiz.github.io/turbo-bassoon/assets/Picture4.png)
 
 You can see in my example I have 3 drives available, one is a USB, one is local, and one is a network drive. The PLC doesn’t care where the file comes from, so long as 
 it is formatted properly and moved to the transfer folder. I combined the import, export and file handling into one function. Why not? They are essentially doing the 
 same thing!
+
 ![Picture 5](https://laswiz.github.io/turbo-bassoon/assets/Picture5.png)
 
 This was modeled after programs available such as Total Commander. You can move files in either direction, delete them, move multiple files, rename files, etc. Just 
@@ -43,102 +48,103 @@ which is slower than before. I am looking at ways that I can mitigate this, but 
 The last thing I want to do is to provide some of the code that I used for these functions. There is nothing proprietary here, it's all stuff I researched and implemented
 to work on my machine control. I provide it as context for how I code. This first part is just setting up all the form controls, please note how the name of my controls
 is easy to understand what they are (it's not button 1 for example):]. It also sets up the system and a global path used throughout the module:
-{
-  [void][System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") 
-  [void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-  [System.Windows.Forms.Application]::EnableVisualStyles()
-  #global info
-  $ErrorActionPreference = "Stop"
 
-  #define path array for all drives... The first element is always the local C drive (will be different on the machine)
-  $global:drivePathArr = New-Object System.Collections.ArrayList
-  $global:currentPath = ''
+```
+[void][System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") 
+[void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+[System.Windows.Forms.Application]::EnableVisualStyles()
+#global info
+$ErrorActionPreference = "Stop"
 
-  #define form information and other global information
-  $OpenFile = New-Object System.Windows.Forms.Form
-  $OpenFile.ClientSize = '520,615' #set size
-  $OpenFile.Text = 'Open Coiler Program'
-  $OpenFile.TopMost = $true
-  $OpenFile.StartPosition = "CenterScreen"
-  $OpenFile.FormBorderStyle = 'Fixed3d'
-  $OpenFile.ControlBox = $false #disable the ability to close the form
+#define path array for all drives... The first element is always the local C drive (will be different on the machine)
+$global:drivePathArr = New-Object System.Collections.ArrayList
+$global:currentPath = ''
+
+#define form information and other global information
+$OpenFile = New-Object System.Windows.Forms.Form
+$OpenFile.ClientSize = '520,615' #set size
+$OpenFile.Text = 'Open Coiler Program'
+$OpenFile.TopMost = $true
+$OpenFile.StartPosition = "CenterScreen"
+$OpenFile.FormBorderStyle = 'Fixed3d'
+$OpenFile.ControlBox = $false #disable the ability to close the form
 
 
-  #create a label with instructions on the usage (create a string variable so you can format the text appropriately
-  $tempStr = -join
-  (
+#create a label with instructions on the usage (create a string variable so you can format the text appropriately
+$tempStr = -join
+(
     'Available drives are listed in the drop down box. Select the drive; the folder contents are shown in the box below.',
     ' Double click or press OK to load program. Cancel will abort the process and return to the HMI. If a drive contains',
     ' a folder, the name is shown without a date. Double click to navigate into it. Use the < to navigate up one folder.',
     ' Choose a new drive to reset the file system.'
-  )
-  $lblTop = New-Object System.Windows.Forms.Label
-  $lblTop.Text = $tempStr
-  $lblTop.Width = 500
-  $lblTop.Height = 75
-  $lblTop.Font = 'Times New Roman, 10'
-  $lblTop.Location = New-Object System.Drawing.Point(10, 15)
+)
+$lblTop = New-Object System.Windows.Forms.Label
+$lblTop.Text = $tempStr
+$lblTop.Width = 500
+$lblTop.Height = 75
+$lblTop.Font = 'Times New Roman, 10'
+$lblTop.Location = New-Object System.Drawing.Point(10, 15)
 
-  $lstFiles = New-Object System.Windows.Forms.ListView
-  $lstFiles.width = 500
-  $lstFiles.Height = 410
-  $lstFiles.Font = 'Arial Black, 12'
-  $lstFiles.Location = New-Object System.Drawing.point(10, 160)
-  $lstFiles.View = 'Details'
-  $lstFiles.FullRowSelect = $true
-  $lstFiles.GridLines = $true 
-  $lstFiles.MultiSelect = $false
-  [void]$lstFiles.Columns.Add("Filename", 275);
-  [void]$lstFiles.Columns.Add("Date", 200);
+$lstFiles = New-Object System.Windows.Forms.ListView
+$lstFiles.width = 500
+$lstFiles.Height = 410
+$lstFiles.Font = 'Arial Black, 12'
+$lstFiles.Location = New-Object System.Drawing.point(10, 160)
+$lstFiles.View = 'Details'
+$lstFiles.FullRowSelect = $true
+$lstFiles.GridLines = $true 
+$lstFiles.MultiSelect = $false
+[void]$lstFiles.Columns.Add("Filename", 275);
+[void]$lstFiles.Columns.Add("Date", 200);
 
-  $lblFilter = New-Object System.Windows.Forms.Label
-  $lblFilter.Text = "Filter Results:"
-  $lblFilter.Width = 140
-  $lblFilter.Height = 75
-  $lblFilter.Font = 'Arial Black, 12'
-  $lblFilter.Location = New-Object System.Drawing.Point(10, 125)
+$lblFilter = New-Object System.Windows.Forms.Label
+$lblFilter.Text = "Filter Results:"
+$lblFilter.Width = 140
+$lblFilter.Height = 75
+$lblFilter.Font = 'Arial Black, 12'
+$lblFilter.Location = New-Object System.Drawing.Point(10, 125)
 
-  $txtFilter = New-Object System.Windows.Forms.TextBox
-  $txtFilter.Location = New-Object System.Drawing.Point(180,125)
-  $txtFilter.AutoSize = 'False'
-  $txtFilter.Width = 280
-  $txtFilter.Height = 150
-  $txtFilter.Font = 'Arial Black, 12'
-  $txtFilter.BorderStyle = "Fixed3d"
-  $txtFilter.Text = ""
+$txtFilter = New-Object System.Windows.Forms.TextBox
+$txtFilter.Location = New-Object System.Drawing.Point(180,125)
+$txtFilter.AutoSize = 'False'
+$txtFilter.Width = 280
+$txtFilter.Height = 150
+$txtFilter.Font = 'Arial Black, 12'
+$txtFilter.BorderStyle = "Fixed3d"
+$txtFilter.Text = ""
 
-  #create a combo box to house all the possible drives
-  $cmbDrives = New-Object System.Windows.Forms.ComboBox
-  $cmbDrives.width = 450
-  $cmbDrives.Height = 35
-  $cmbDrives.Font = 'Arial Black, 12'
-  $cmbDrives.Location = New-Object System.Drawing.Point(10,90)
+#create a combo box to house all the possible drives
+$cmbDrives = New-Object System.Windows.Forms.ComboBox
+$cmbDrives.width = 450
+$cmbDrives.Height = 35
+$cmbDrives.Font = 'Arial Black, 12'
+$cmbDrives.Location = New-Object System.Drawing.Point(10,90)
 
 
-  #create the cancel button
-  $btnCancel = New-Object System.Windows.Forms.Button
-  $btnCancel.Text = 'Cancel'
-  $btnCancel.Width = 120
-  $btnCancel.Height = 35
-  $btnCancel.Font = 'Times New Roman, 14'
-  $btnCancel.Location = New-Object System.Drawing.Point(380, 578)
+#create the cancel button
+$btnCancel = New-Object System.Windows.Forms.Button
+$btnCancel.Text = 'Cancel'
+$btnCancel.Width = 120
+$btnCancel.Height = 35
+$btnCancel.Font = 'Times New Roman, 14'
+$btnCancel.Location = New-Object System.Drawing.Point(380, 578)
 
-  #create the OK button
-  $btnOK = New-Object System.Windows.Forms.Button
-  $btnOK.Text = 'OK'
-  $btnOK.Width = 120
-  $btnOK.Height = 35
-  $btnOK.Font = 'Times New Roman, 14'
-  $btnOK.Location = New-Object System.Drawing.Point(235, 578)
+#create the OK button
+$btnOK = New-Object System.Windows.Forms.Button
+$btnOK.Text = 'OK'
+$btnOK.Width = 120
+$btnOK.Height = 35
+$btnOK.Font = 'Times New Roman, 14'
+$btnOK.Location = New-Object System.Drawing.Point(235, 578)
 
-  $btnUpFolder = New-Object System.Windows.Forms.Button
-  $btnUpFolder.Text = '<'
-  $btnUpFolder.Width = 35
-  $btnUpFolder.Height = 35
-  $btnUpFolder.Font = 'Arial Black, 12'
-  $btnUpFolder.Anchor = 'Right, Bottom'
-  $btnUpFolder.Location = New-Object System.Drawing.Point(($cmbDrives.Left + $cmbDrives.Width + 15), ($cmbDrives.Top - 1))
-}
+$btnUpFolder = New-Object System.Windows.Forms.Button
+$btnUpFolder.Text = '<'
+$btnUpFolder.Width = 35
+$btnUpFolder.Height = 35
+$btnUpFolder.Font = 'Arial Black, 12'
+$btnUpFolder.Anchor = 'Right, Bottom'
+$btnUpFolder.Location = New-Object System.Drawing.Point(($cmbDrives.Left + $cmbDrives.Width + 15), ($cmbDrives.Top - 1))
+```
 
 Next up is the form controls. We have to handle some events here when the user performs some functions. I put them together so they are easy to follow:
 $btnOK.Add_Click( {
