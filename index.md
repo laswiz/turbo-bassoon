@@ -76,7 +76,12 @@ Can't have a code review complete with enhancement suggestions without actually 
 [Fixing an Undersized Chiller with Software](https://laswiz.github.io/turbo-bassoon/ChillerControl.html)
 
 
-
+## FILE HANDLING
+I like simple. I've stated that. Repeatedly. So when I started a new job and the first complaint I got was that file handling has always been a problem, I wanted to
+fix it! Turns out, the PLC controlled all the file handling on a Windows platform. That is a recipe for disaster. Why not let Windows handle the files? After all, it
+is what it is best at. Let Windows manage network devices, share names, portable devices. The PLC shouldn't care. However, we do need an interface to this... How about
+Powershell? A light, portable interface that uses standard Windows Forms. So I did it. Here are the results.
+[Handling Files with the Greatest of Ease](https://laswiz.github.io/turbo-bassoon/FileHandling.html)
 
 
 
