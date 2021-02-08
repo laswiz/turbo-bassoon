@@ -4,7 +4,7 @@
 
 
 pictures:
-![Picture 1](https://laswiz.github.io/turbo-bassoon/assets/picture1.png)
+![useful image]({{ site.url }}/assets/Picture1.png)
 ![Picture 2](https://laswiz.github.io/turbo-bassoon/assets/picture2.png)
 ![Picture 3](https://laswiz.github.io/turbo-bassoon/assets/picture3.png)
 ![Picture 4](https://laswiz.github.io/turbo-bassoon/assets/picture4.png)
