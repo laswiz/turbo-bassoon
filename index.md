@@ -55,7 +55,13 @@ In regards to security, I'm old school. Really old school. I'm not going to try 
 at all! The absolute best security you can have is no access. You can't defeat that. If there is no connection, there is nothing to hack. However, in the real world, that
 is not feasible. I know that. So the solution is a hybrid. Lock out as much as you can, and where we do have to allow access, we make it very narrow and highly secure. If
 there is only one point of entry, there is only one thing protect. On the flip side, that one thing better be rock solid, because that is where all the effort is going to
-be spent.
+be spent. PLC's are pretty easy to protect, they are pretty closed off, not connected to the outside world. But that is changing... Industry 4.0 and customer demands for
+information mean more connections and more security holes. For both of these things, you need a common connection design; a common interface. Here, the best way to 
+provide what the customer wants AND be secure is to use a service like OPC (OLE For Process Control). This open standard creates the framework for connection possibilities
+and security at the same time. It's like having your cake and eating it too. We can provide what they want securely. Whether we allow commands into the machine control 
+will depend on the level of control we allow. Is it merely a way to get machine status out of the control or is it interfacing to another system in the plant? If the 
+machine is controlling something else, you have to allow for two way communication, which can increase security loads. The method is protected, but not the intent. Here
+the developer needs to ensure his product meets these intents, whether they are innocent errors or malicious attacks.
 
 So that's it; that's how I assess myself. For more ramblings about me, see the next section. I started this as my self-assessment, but thought it better in an about me
 page. The artifacts I have chosen fit me as a developer, showcase what my talents are, and most importantly, reflect on my time at SNHU garnering this degree.
