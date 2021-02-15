@@ -30,3 +30,11 @@ similar. I think it could be used in any number of places from the workplace to 
 would produce more benefits than the final product. In the end, below is my updated database design for a student identification system:
 
 ![Picture 7](https://laswiz.github.io/turbo-bassoon/assets/Picture7.png)
+
+## Get Me Outta This Nutshell!
+So that's my take on database design. Like everything else, I keep it light, but still to the point. I believe that databases, when designed correctly, are the best way to 
+data for virtually any use. They are user-centric, able to be read by both user and machine, and very portable (which makes them a target for theft). I had a colleage that
+told me something I will never forget. We were upgrading an internal software system in the early 2000's (when the internet was incredibly slow by today's standards). We 
+had to copy a 1GB database from our subsidiary in Germany to the US. 1GB! I said, "that will take forever!" He told me, "Do not worry, databases are mostly 'air.'" He was
+right. That 1GB compressed down to less than 250MB. Still took a couple of hours, but 75% compression was pretty good. It's probably the best line I have heard about databases.
+
