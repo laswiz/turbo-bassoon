@@ -1,4 +1,4 @@
-### [HOME](https://laswiz.github.io/turbo-bassoon/index.html)
+### [HOME](https://laswiz.github.io/turbo-bassoon/index.html) [About Me](https://laswiz.github.io/turbo-bassoon/AboutMe.html) [Enhanced Chiller Module](https://laswiz.github.io/turbo-bassoon/ChillerControl.html) [File Handling](https://laswiz.github.io/turbo-bassoon/FileHandling.html) [Databases](https://laswiz.github.io/turbo-bassoon/Databases.html)
 
 ### How do I Assess Thee?
 Where do I start? I touched on it on the home page a bit. I never expected to end up here. I've always been a friend of technology. From a young age, I just "got" computers. 
