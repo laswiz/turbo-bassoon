@@ -89,6 +89,12 @@ is what it is best at. Let Windows manage network devices, share names, portable
 Powershell? A light, portable interface that uses standard Windows Forms. So I did it. Here are the results.
 [Handling Files with the Greatest of Ease](https://laswiz.github.io/turbo-bassoon/FileHandling.html)
 
+## Databases
+Living in the PLC world means little influence from things like databases. I deal with file handling. I deal with inputs and outputs. I do not deal with databases. 
+Does that mean I don't know how to design them? Absolutely not! Like my PLC code, I design straight-forward, easy-to-use databases of course! Easy to use and databases 
+are not something you would think go hand in hand, but take a look... I think you'll agree it can be.
+[Take this data and... base it?](https://laswiz.github.io/turbo-bassoon/Databases.html)
+
 
 
 
