@@ -1,6 +1,6 @@
 ### [HOME](https://laswiz.github.io/turbo-bassoon/index.html) [About Me](https://laswiz.github.io/turbo-bassoon/AboutMe.html) [Enhanced Chiller Module](https://laswiz.github.io/turbo-bassoon/ChillerControl.html) [File Handling](https://laswiz.github.io/turbo-bassoon/FileHandling.html) [Databases](https://laswiz.github.io/turbo-bassoon/Databases.html)
 
-### Where Do I Start?
+## Where Do I Start?
 Being a PLC developer, you rarely get the chance to work in databases. I have certainly done so in my career, but normally it is just cleaning up other peoples’ messes, 
 or just making sense of some data for some project. Of all the databases I have worked on (and there have not been that many), none rose to the level of portfolio material. 
 So instead, I decided to focus on one of the classes I have taken on this path to my bachelor’s degree at SNHU. IT-315 is focusing on something I want to get better at, 
@@ -11,6 +11,7 @@ with this class:
 
 ![Picture 6](https://laswiz.github.io/turbo-bassoon/assets/Picture6.png)
 
+## OH, THAT'S How You Do It!
 I decided the best way to promote how I approach a problem is by refining this plan further. Thinking of how a user would want to interact with the system, and especially try 
 and exploit the system (after my secure coding class, I just can’t help thinking the worst now), I wanted to protect the data further. I removed the association between the
 student and the maintenance and instead created a basic class that will handle only those functions the student is allowed to access. I also added a user level to both 
