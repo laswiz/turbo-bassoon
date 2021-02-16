@@ -19,7 +19,7 @@ I would also be stuck there. Things were changing there, and for me personally t
 like a good time to do it. Probably the biggest thing I learned throughout my adademic journey is there is no magic bullet. There was no "Aha" moment for me. I knew
 a lot of what was being taught already from my employment. Some things I had no idea about, and may never use them again (Calculus, how I struggled with thee!). Some
 things were really fun, and I actually wished the class had more I needed to do (Raspberry Pi projects are in my future!). The biggest thing I learned was about me.
-I could do it. I could do it # well. 
+I could do it. I could do it well. 
 
 I laugh when I think of how this journey has showcased my strengths. In more than one class, I ended up being the main point of contact from my classmates for help.
 I'm sure they emailed the instructor too, but it became commonplace for me to start checking my email every day for something from my classmates. They came to me 
